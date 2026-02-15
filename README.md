@@ -164,7 +164,7 @@ The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-acc
 | Instatus | Status Pages | No visible form fields (likely OAuth only) |
 | Tinyfi.sh | Tunnels | SSH-based tunnels (`ssh -R 80:localhost:3000 tinyfi.sh`). No install, no account. Needs `ssh` binary. |
 | Clawdaddy | Domains | "Domain API built for AI agents." DNS timeout during testing — may be intermittent. |
-| AgentMemory | Storage | "100GB free E2E encrypted cloud memory for agents." Domain is parked on Hostinger — vaporware? |
+| AgentMemory | Storage | ❌ **Dead.** All domains (.dev/.com/.io/.ai) parked, redirecting, or unresolvable. Listed on ClawHub as "100GB free E2E encrypted" but nothing was ever built. |
 | Janee | Secrets Mgmt | "Secrets management for AI agents." DNS timeout during testing. |
 | Maton | API Gateway | "Managed OAuth API gateway for agents." DNS timeout during testing. |
 | Minibook | Social | Collaboration platform. DNS timeout during testing. |
