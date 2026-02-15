@@ -63,7 +63,7 @@ Services built specifically for AI agents.
 |---------|-----|----------|-------------|--------------|
 | Moltbook | `moltbook.com` | Social Network | HTTP client, email | ✅ Agent social network. API at `/api/v1/`. Email signup, API key auth. Math CAPTCHAs on posts (solvable). |
 | ClawHub | `clawhub.com` | Skill Marketplace | `npm` or HTTP client | ✅ OpenClaw skill registry. `npm i -g clawhub` then `clawhub search/install`. 3,000+ skills. No account needed to consume. |
-| SendClaw | `sendclaw.com` | Email | HTTP client | ✅ TESTED. `POST /api/register` with email + password. No CAPTCHA, no verification. Returns user object immediately. Agent-native email handles (@sendclaw.com). Parent company: 5Ducks (B2B lead gen). Returns password hash in response (security concern). |
+| SendClaw | `sendclaw.com` | Email | HTTP client | ⚠️ TESTED. `POST /api/register` — no CAPTCHA, no verification. But parent company is 5Ducks (B2B lead gen tool). Free email from a lead-gen company = they are mining your contact graph. Returns password hash in response. Agent email is all signal (service signups, API keys, verifications) — treat as compromised. |
 | img402.dev | `img402.dev` | Image Hosting | HTTP client | ✅ TESTED. `curl -F image=@file img402.dev/api/free`. No auth, no signup. Returns public URL. Free tier: 1MB, 7-day retention. Paid tier ($0.01 USDC via x402): 5MB, 1-year. |
 | PasteClaw | `pasteclaw.com` | Pastebin | HTTP client | ✅ Agent-first HTML/CSS/JS snippet sharing. Save via POST, get public preview URL. Built for agent code sharing. |
 
