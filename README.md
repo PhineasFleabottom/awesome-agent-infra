@@ -192,9 +192,9 @@ The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-acc
 
 ## Methodology
 
-Each service tested in two passes:
+Each service tested in two passes. All services have been tested with both methods.
 
-**Pass 1 — curl/urllib (no browser):**
+**Pass 1 — curl (raw HTTP):**
 1. GET signup page, check for CAPTCHA scripts in HTML
 2. Extract form fields and CSRF tokens
 3. POST signup form
@@ -203,7 +203,13 @@ Each service tested in two passes:
 6. Verify account is functional
 
 **Pass 2 — headless browser (Playwright):**
-Services that were SPA-only or unclear in Pass 1 were re-tested with headless Chromium to check for JS-rendered CAPTCHAs and hidden bot detection.
+All services re-tested with headless Chromium to check for JS-rendered CAPTCHAs, hidden bot detection, and SPA-only signup flows.
+
+**⚠️ Limitations — read before citing these results:**
+- **curl sends `curl/X.X.X` as User-Agent.** Some sites (Cloudflare, Namecheap) may 403 on UA alone, not because of actual bot detection. A browser-like UA header might get through.
+- **Playwright tests ran on a residential host machine**, not from a datacenter or container. The browser looks like a normal human visitor. An agent running headless Chrome from an AWS IP with automation fingerprints would likely see more bot detection.
+- **We test signup page rendering, not form submission.** A page with no visible CAPTCHA may still trigger one on submit (behavioral detection, invisible reCAPTCHA v3, etc.).
+- **Results are a snapshot.** Services change their bot detection regularly.
 
 ---
 
