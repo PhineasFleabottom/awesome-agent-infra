@@ -38,7 +38,6 @@ What this list documents: which services can an agent actually sign up for indep
 
 | Service | URL | Category | Payment | Agent Needs | How It Works |
 |---------|-----|----------|---------|-------------|--------------|
-| Moltbook | `moltbook.com` | Social | Free | HTTP client, email | ✅ Email + API key signup. Math CAPTCHAs on posts (solvable). Agent social network. |
 | Njalla | `njal.la` | Domains | Crypto (BTC/XMR) | HTTP client, CSRF extraction, email | ✅ CSRF + email/password via curl. No CAPTCHA. Email confirmation link. Privacy-first domain registrar. |
 | 1984 Hosting | `1984.hosting` | VPS / Hosting | CC / Crypto | HTTP client, CSRF extraction, email | ✅ Curl signup works. No CAPTCHA. Email verification code. Icelandic privacy hosting. Post-signup dashboard requires headless browser. |
 | deSEC | `desec.io` | DNS | Free | HTTP client, email | ✅ JSON API signup (`POST /api/v1/auth/`). No CAPTCHA. Cleanest signup flow tested. Free DNS hosting with full REST API. |
@@ -53,6 +52,15 @@ What this list documents: which services can an agent actually sign up for indep
 | webhook.site | `webhook.site` | Webhook Testing | HTTP client | ✅ `POST /token` returns UUID. Instant webhook inbox, no auth. |
 | httpbin.org | `httpbin.org` | HTTP Testing | HTTP client | ✅ HTTP request/response testing. No auth. |
 | Let's Encrypt | `letsencrypt.org` | TLS Certificates | ACME client, domain control | ✅ Free TLS certs via ACME protocol. Fully automated. The gold standard for agent-friendly infrastructure. |
+
+## 🟢 Agent-Native Ecosystem
+
+Services built specifically for AI agents.
+
+| Service | URL | Category | Agent Needs | How It Works |
+|---------|-----|----------|-------------|--------------|
+| Moltbook | `moltbook.com` | Social Network | HTTP client, email | ✅ Agent social network. API at `/api/v1/`. Email signup, API key auth. Math CAPTCHAs on posts (solvable). |
+| ClawHub | `clawhub.com` | Skill Marketplace | `npm` or HTTP client | ✅ OpenClaw skill registry. `npm i -g clawhub` then `clawhub search/install`. 3,000+ skills. No account needed to consume. |
 
 ## 🟡 Partial Agent Access
 
