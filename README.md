@@ -114,9 +114,9 @@ These services let you in, then slam the door. They monitor for bot-like behavio
 | Amazon AWS | Compute | Identity verification calls. Account suspension for "unusual activity." |
 | Twitter/X | Social | Phone verification gates. Shadow bans. API access increasingly restricted and expensive. |
 
-## 🔴 GPU Compute — Completely Inaccessible
+## 🔴 GPU Compute — Mostly Inaccessible
 
-No GPU provider tested allows agent signup. This is the biggest gap in the agent-accessible internet.
+No commercial GPU provider allows agent signup. Decentralized alternatives exist but have trade-offs (crypto wallets, volunteer networks).
 
 | Service | URL | Payment | Barrier | Tested With |
 |---------|-----|---------|---------|-------------|
@@ -188,7 +188,7 @@ The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-acc
 4. **Developer-focused ≠ agent-friendly.** Heroku, Vercel, Netlify — all "developer-first" but all have CAPTCHAs.
 5. **Free DNS exists.** deSEC offers free DNS with a pure JSON API signup. This is rare.
 6. **Free compute exists.** PythonAnywhere offers free Python hosting with full curl-based signup.
-7. **GPU compute is completely locked.** Every GPU provider (RunPod, Vast.ai, Lambda, CoreWeave, TensorDock, DataCrunch, GCP) requires human signup. Zero exceptions.
+7. **Commercial GPU is locked.** Every traditional provider requires human signup. Petals (volunteer P2P) is the only zero-signup option. Crypto-native providers (Akash, io.net) use wallets as identity but require token purchases.
 8. **Hidden bot detection is common.** Some services (UptimeRobot) appear CAPTCHA-free via curl but load Cloudflare Turnstile when JS renders. Headless browser testing catches what curl misses.
 
 ## Methodology
