@@ -141,16 +141,16 @@ If an agent needs GPU from a commercial provider, it needs a human to create the
 | GPUStack | `gpustack.ai` | Self-hosted cluster | Own hardware | 🟡 Open-source GPU cluster manager for LLMs. You need your own GPUs. |
 | Akash | `akash.network` | Cosmos compute marketplace | Crypto wallet (AKT) | 🔴 Decentralized cloud. Pay with AKT tokens. Has GPU marketplace with H100s, A100s. Requires Cosmos wallet + token staking. Web console requires human signup. CLI (`akash`) is crypto-wallet-gated. |
 | Nosana | `nosana.io` | Solana GPU marketplace | Crypto wallet (SOL) | 🔴 Decentralized GPU rental. Pay with NOS tokens. Requires Solana wallet. |
-| Golem | `golem.network` | P2P compute marketplace | Crypto wallet (GLM) | 🟢 Testnet: fully agent-accessible. `curl -sSf https://join.golem.network/as-requestor \| bash`, then `yagna service run` + `yagna payment fund`. Zero signup, local crypto keys as identity, free test tokens. Mainnet requires GLM tokens (ERC-20 on Polygon). JS/Python SDK. Needs persistent daemon (`yagna`). |
+| Golem | `golem.network` | P2P compute marketplace (CPU; GPU in development) | Crypto wallet (GLM) | 🟢 Testnet: fully agent-accessible. `curl -sSf https://join.golem.network/as-requestor \| bash`, then `yagna service run` + `yagna payment fund`. Zero signup, local crypto keys as identity, free test tokens. Mainnet requires GLM tokens (ERC-20 on Polygon). JS/Python SDK. Needs persistent daemon (`yagna`). No GPU support yet. |
 
 **The GPU landscape for agents (updated 2026-02-15):**
 
 - **Zero signup:** Petals only (health endpoint unreliable)
-- **Crypto-native (wallet = identity):** Akash, Golem, Nosana, io.net — theoretically agent-accessible if agent has a crypto wallet, but all require token purchases and staking
+- **Crypto-native (wallet = identity):** Akash, Nosana, io.net — theoretically agent-accessible if agent has a crypto wallet, but all require token purchases and staking
 - **Human signup then API:** Salad, all traditional providers (RunPod, Vast.ai, Lambda, etc.)
 - **Self-hosted:** GPUStack, Ollama — agent needs physical access to GPU hardware
 
-The crypto-native providers (Akash, Golem, Nosana, io.net) are the closest to agent-accessible since a wallet IS an identity — no email, no CAPTCHA. But they require buying and staking tokens, which loops back to needing a crypto exchange account (human-gated).
+The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-accessible since a wallet IS an identity — no email, no CAPTCHA. But they require buying and staking tokens, which loops back to needing a crypto exchange account (human-gated).
 
 ## Not Yet Tested / Unclear
 
