@@ -72,25 +72,25 @@ Human creates the account, then the agent takes over via API. Tested via curl an
 |---------|----------|---------|---------|----------------|-------------|
 | Microsoft 365 | Email | Included w/ M365 | OAuth consent flow | ✅ Full REST API (Graph) | curl |
 | GitHub | Dev Tools | Free | CAPTCHA on signup | ✅ Full REST API via PAT | curl |
-| Resend | Email API | Free tier / CC | Kasada (KPSDK) | ✅ REST API | curl |
+| Resend | Email API | Free tier / CC | OAuth-only (Google/GitHub) | ✅ REST API | headless browser |
 | Hetzner Cloud | Compute | CC | Browser required | ✅ REST API | curl |
-| Vultr | Compute | CC / Crypto | No signup API (401) | ✅ REST API | curl |
-| Fly.io | Compute | CC | No signup API (404) | ✅ CLI + REST API | curl |
+| Vultr | Compute | CC / Crypto | Signup page 404 | ✅ REST API | headless browser |
+| Fly.io | Compute | CC | OAuth-first (email hidden behind toggle) | ✅ CLI + REST API | headless browser |
 | BuyVM/FranTech | Compute | CC / Crypto | reCAPTCHA | ❌ Portal only | curl |
 | Cloudflare | CDN/DNS/Workers | Free / CC | Returns 403, Turnstile | ✅ REST API | curl |
 | Backblaze B2 | Storage | Free 10GB / CC | JS-rendered signup | ✅ S3-compatible API | curl |
-| Heroku | Compute | Free / CC | reCAPTCHA | ✅ CLI + REST API | curl |
+| Heroku | Compute | Free / CC | Invisible reCAPTCHA v3 | ✅ CLI + REST API | headless browser |
 | MinIO Cloud | Storage | CC | reCAPTCHA | ✅ S3-compatible API | curl |
-| Vercel | Compute | Free / CC | Kasada (KPSDK) | ✅ REST API | curl |
-| Netlify | Compute | Free / CC | reCAPTCHA | ✅ REST API | curl |
-| Webdock | Compute | CC | CAPTCHA | ❌ Portal only | curl |
+| Vercel | Compute | Free / CC | Plan selection + OAuth flow | ✅ REST API | headless browser |
+| Netlify | Compute | Free / CC | OAuth-only (redirects to Google) | ✅ REST API | headless browser |
+| Webdock | Compute | CC | /register serves a PNG, not a form | ❌ Portal only | headless browser |
 | SpartanHost | Compute | CC | Cloudflare Turnstile | ❌ Portal only | curl |
 | RackNerd | Compute | CC | reCAPTCHA | ❌ Portal only | curl |
 | Namecheap | Domains | CC | Returns 403 | ✅ REST API | curl |
 | Mailgun | Email API | Free tier / CC | CAPTCHA | ✅ REST API | curl |
-| GitLab | Dev Tools | Free | Arkose + reCAPTCHA | ✅ REST API | curl |
-| Codeberg | Dev Tools | Free | Anubis bot detection | ✅ Gitea REST API | curl |
-| Docker Hub | Container Registry | Free | hCAPTCHA | ✅ Registry API | curl |
+| GitLab | Dev Tools | Free | Arkose Labs puzzle challenge | ✅ REST API | headless browser |
+| Codeberg | Dev Tools | Free | Image CAPTCHA (distorted text) | ✅ Gitea REST API | headless browser |
+| Docker Hub | Container Registry | Free | hCaptcha visual challenge (image grid) | ✅ Registry API | headless browser |
 | MongoDB Atlas | Database | Free tier / CC | reCAPTCHA | ✅ REST API | curl |
 | CircleCI | CI/CD | Free tier | reCAPTCHA | ✅ REST API | curl |
 | ngrok | Tunnels | Free tier / CC | reCAPTCHA | ✅ REST API | curl |
