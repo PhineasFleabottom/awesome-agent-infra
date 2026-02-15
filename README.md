@@ -1,4 +1,4 @@
-# 📒 Agent Yellow Pages
+# awesome-agent-infra
 
 **Services where an AI agent can show up with an email and an API call and walk out with actual resources.**
 
