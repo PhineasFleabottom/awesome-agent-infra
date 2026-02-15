@@ -39,15 +39,16 @@ What this list actually documents is: once a human creates the account, how much
 |---------|--------|-------|---------|-------|
 | **Moltbook** | 🟢 | 🟢 | Free | Agent social network. Email + API key, no CAPTCHA for signup. Math CAPTCHAs on posts/comments (solvable). |
 | **Microsoft 365 (Graph API)** | 🟡 | 🟢 | Included w/ M365 | Human creates Azure AD app + OAuth consent. Agent handles token refresh and full email via API. |
-| **Resend** | 🔴 | 🟢 | Free tier / Credit card | Kasada bot protection on signup. Once in, excellent API for transactional email. |
+| **Resend** | 🔴 | 🟢 | Free tier / Credit card | ✅ TESTED: Kasada (KPSDK) bot protection on signup POST. Cannot create account via API. |
 
 ## Compute
 
 | Service | Signup | Usage | Payment | Notes |
 |---------|--------|-------|---------|-------|
-| **Hetzner Cloud** | 🔴 | 🟢 | Credit card | Browser signup. Full API after: create/destroy servers, snapshots, networking. Cheapest EU compute. |
-| **Vultr** | 🔴 | 🟢 | Credit card / Crypto | Browser signup. Full API for provisioning. Accepts Bitcoin/crypto for payment. |
-| **Fly.io** | 🔴 | 🟢 | Credit card | Browser signup. CLI-first after that (`flyctl`). Deploy containers globally. |
+| **Hetzner Cloud** | 🔴 | 🟢 | Credit card | ✅ TESTED: No signup API. Browser required. Full API after. |
+| **Vultr** | 🔴 | 🟢 | Credit card / Crypto | ✅ TESTED: No signup API (401). Browser required. Accepts crypto. |
+| **Fly.io** | 🔴 | 🟢 | Credit card | ✅ TESTED: No signup API (404). Browser required. CLI-first after. |
+| **BuyVM/FranTech** | 🔴 | 🟢 | Credit card / Crypto | ✅ TESTED: reCAPTCHA on signup. Accepts Bitcoin. Budget VPS. |
 
 ## Storage
 
@@ -60,14 +61,15 @@ What this list actually documents is: once a human creates the account, how much
 
 | Service | Signup | Usage | Payment | Notes |
 |---------|--------|-------|---------|-------|
-| **Cloudflare** | 🔴 | 🟢 | Free / Credit card | Browser signup with Turnstile. Full DNS/Workers API after. |
+| **Cloudflare** | 🔴 | 🟢 | Free / Credit card | ✅ TESTED: Returns 403 on signup page from curl. Turnstile. Full API after. |
 | **Porkbun** | 🔴 | 🟢 | Credit card / Crypto | Browser signup. API for domain management. Accepts crypto. |
 
 ## Dev Tools
 
 | Service | Signup | Usage | Payment | Notes |
 |---------|--------|-------|---------|-------|
-| **GitHub** | 🔴 | 🟢 | Free | CAPTCHA on signup. Full API via PAT after. Classic PATs for cross-repo PRs. |
+| **GitHub** | 🔴 | 🟢 | Free | ✅ TESTED: CAPTCHA on signup. Full API via PAT after. Classic PATs for cross-repo PRs. |
+| **Webdock** | 🔴 | ? | Credit card | ✅ TESTED: CAPTCHA on signup page. |
 
 ## Search & Data
 
@@ -85,8 +87,8 @@ What this list actually documents is: once a human creates the account, how much
 
 | Service | Signup | Usage | Payment | Notes |
 |---------|--------|-------|---------|-------|
-| **Njalla** | 🟡 | 🟢 | Crypto | Privacy-focused domain registrar. Minimal signup. Accepts Bitcoin/Monero. |
-| **1984 Hosting** | 🟡 | 🟢 | Crypto | Icelandic privacy hosting. Minimal KYC. |
+| **Njalla** | 🟢 | 🟢 | Crypto | ✅ TESTED: Privacy-focused domain registrar. Signup via curl with CSRF token — no CAPTCHA, no phone. Email confirmation link. Accepts Bitcoin/Monero. |
+| **1984 Hosting** | 🟢 | 🟡 | Credit card / Crypto | ✅ TESTED: Icelandic hosting. Signup via curl — no CAPTCHA. Email verification code. Login/verify requires JS SPA (not fully curl-able). Accepts crypto. |
 
 ---
 
