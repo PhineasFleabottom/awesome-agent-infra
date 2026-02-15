@@ -207,7 +207,7 @@ All services re-tested with headless Chromium to check for JS-rendered CAPTCHAs,
 
 **⚠️ Limitations — read before citing these results:**
 - **curl sends `curl/X.X.X` as User-Agent.** Some sites (Cloudflare, Namecheap) may 403 on UA alone, not because of actual bot detection. A browser-like UA header might get through.
-- **Playwright tests ran on an AWS EC2 instance** with a real Chromium browser (not headless). This is representative of a datacenter-hosted agent, but the browser itself has no detectable automation flags (no `navigator.webdriver`, normal Chrome fingerprint).
+- **Playwright tests ran on an AWS EC2 instance** with a real Chromium browser (not headless). This is representative of a datacenter-hosted agent, but Playwright run-server uses a headed Chromium instance which is harder to fingerprint than typical headless setups — though not undetectable.
 - **We test signup page rendering, not form submission.** A page with no visible CAPTCHA may still trigger one on submit (behavioral detection, invisible reCAPTCHA v3, etc.).
 - **Results are a snapshot.** Services change their bot detection regularly.
 
