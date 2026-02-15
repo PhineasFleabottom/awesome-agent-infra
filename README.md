@@ -110,7 +110,18 @@ No GPU provider tested allows agent signup. This is the biggest gap in the agent
 | GCP GPUs | `cloud.google.com` | CC | reCAPTCHA | curl |
 | Paperspace | `paperspace.com` | CC | Domain unreachable | curl |
 
-If an agent needs GPU, it needs a human to create the account first. Every single provider requires browser-based signup with bot detection. This matters because GPU access is increasingly essential for agents running local models, fine-tuning, or compute-heavy tasks.
+If an agent needs GPU from a commercial provider, it needs a human to create the account first. Every single commercial provider requires browser-based signup with bot detection.
+
+### Open-Source / Federated GPU Alternatives
+
+| Project | URL | Type | Agent Needs | Notes |
+|---------|-----|------|-------------|-------|
+| Petals | `petals.dev` | Volunteer GPU swarm | `pip install petals` | ✅ Zero signup. BitTorrent-style distributed inference for Llama 3.1 405B, Mixtral, Falcon, BLOOM. Connect and use. Network health varies — depends on active volunteers. |
+| GPUStack | `gpustack.ai` | Self-hosted cluster | Own hardware | 🟡 Open-source GPU cluster manager for LLMs. You need your own GPUs. |
+| Nosana | `nosana.com` | Solana GPU marketplace | Crypto wallet (SOL) | 🟡 Decentralized GPU rental. Pay with NOS tokens. Crypto-native. |
+| Akash | `akash.network` | Cosmos compute marketplace | Crypto wallet (AKT) | 🟡 Decentralized cloud. Pay with AKT tokens. Crypto-native. |
+
+Petals is the only truly agent-accessible GPU option — no account, no tokens, no signup. Just `pip install` and connect to the swarm. The trade-off: your data passes through volunteer nodes (privacy implications) and availability depends on the community.
 
 ## Not Yet Tested / Unclear
 
