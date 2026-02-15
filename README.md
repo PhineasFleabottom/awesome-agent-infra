@@ -60,25 +60,44 @@ What this list documents: which services can an agent actually sign up for indep
 | **RackNerd** | Compute | CC | reCAPTCHA |
 | **Namecheap** | Domains | CC | Returns 403 |
 | **Mailgun** | Email API | Free tier / CC | CAPTCHA |
+| **GitLab** | Dev Tools | Free | Arkose + reCAPTCHA |
+| **Codeberg** | Dev Tools | Free | Anubis bot detection ("Making sure you're not a bot") |
+| **Docker Hub** | Container Registry | Free | hCAPTCHA |
+| **MongoDB Atlas** | Database | Free tier / CC | reCAPTCHA |
+| **CircleCI** | CI/CD | Free tier | reCAPTCHA |
+| **ngrok** | Tunnels | Free tier / CC | reCAPTCHA |
+| **Plausible** | Analytics | Paid | hCAPTCHA |
+| **Mullvad VPN** | VPN | Crypto | hCAPTCHA |
+| **Pushover** | Push Notifications | Paid | hCAPTCHA |
 
-## Not Yet Tested
+## 🟢 No-Signup Services (just work, no account needed)
+
+| Service | Category | How It Works |
+|---------|----------|--------------|
+| **[ntfy.sh](https://ntfy.sh)** | Push Notifications | ✅ `curl -d "message" ntfy.sh/your-topic`. Zero auth. Pub/sub push notifications. |
+| **[paste.rs](https://paste.rs)** | Pastebin | ✅ `curl --data-binary @file paste.rs`. Returns URL. No auth. |
+| **[webhook.site](https://webhook.site)** | Webhook Testing | ✅ `POST /token` returns UUID. Instant webhook inbox, no auth. |
+| **[httpbin.org](https://httpbin.org)** | HTTP Testing | ✅ HTTP request/response testing. No auth. |
+
+## Not Yet Tested / Unclear
 
 | Service | Category | Notes |
 |---------|----------|-------|
-| **Wasabi** | Storage (S3) | No CAPTCHA on marketing page but signup is HubSpot form → unclear if creates actual account |
-| **Storj** | Decentralized Storage | Domain unreachable during test |
+| **Wasabi** | Storage (S3) | Marketing form (HubSpot), unclear if creates real account |
 | **Render** | Compute | SPA, needs JS |
 | **Railway** | Compute | SPA, needs JS |
-| **Supabase** | Database | Cloudflare 1010 block on API |
+| **Supabase** | Database | Cloudflare 1010 block |
 | **Oracle Cloud** | Compute | SPA, needs JS |
-| **dynv6** | Dynamic DNS | SPA, needs JS |
-| **Hurricane Electric DNS** | DNS | Has form fields but registration link unclear |
+| **Cronitor** | Monitoring | No CAPTCHA but signup redirects to login (JS needed?) |
+| **PlanetScale** | Database | Has form fields, CSRF, no CAPTCHA — needs further testing |
+| **Instatus** | Status Pages | No CAPTCHA detected, SPA |
 
 ---
 
 ## Key Findings
 
-1. **Signup is the bottleneck.** Every service has excellent APIs *after* account creation. The gatekeeper is the signup form.
+1. **No-signup services exist.** ntfy.sh, paste.rs, webhook.site — useful infrastructure that requires zero authentication.
+2. **Signup is the bottleneck.** Every service has excellent APIs *after* account creation. The gatekeeper is the signup form.
 2. **Privacy-focused services are agent-friendly.** Njalla and 1984 (both Icelandic) don't use CAPTCHAs because their business model is privacy, not surveillance.
 3. **Developer-focused ≠ agent-friendly.** Heroku, Vercel, Netlify — all "developer-first" but all have CAPTCHAs.
 4. **Free DNS exists.** deSEC offers free DNS with a pure JSON API signup. This is rare.
