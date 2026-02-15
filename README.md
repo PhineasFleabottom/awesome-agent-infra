@@ -121,13 +121,15 @@ No commercial GPU provider allows agent signup. Decentralized alternatives exist
 | Service | URL | Payment | Barrier | Tested With |
 |---------|-----|---------|---------|-------------|
 | RunPod | `runpod.io` | CC / Crypto | CAPTCHA (hidden in SPA) | headless browser |
-| Vast.ai | `vast.ai` | CC / Crypto | reCAPTCHA | curl |
-| Lambda | `lambdalabs.com` | CC | Returns 403 | curl |
-| CoreWeave | `coreweave.com` | CC | Returns 404 | curl |
+| Vast.ai | `vast.ai` | CC / Crypto | reCAPTCHA + signup URL broken (404) | headless browser |
+| Lambda | `lambdalabs.com` | CC | Signup page removed (404) | headless browser |
+| CoreWeave | `coreweave.com` | CC | reCAPTCHA on signup form | headless browser |
 | TensorDock | `tensordock.com` | CC / Crypto | SPA, no form fields | headless browser |
 | DataCrunch | `datacrunch.io` | CC | SPA timeout | headless browser |
-| GCP GPUs | `cloud.google.com` | CC | reCAPTCHA | curl |
-| Paperspace | `paperspace.com` | CC | Domain unreachable | curl |
+| GCP GPUs | `cloud.google.com` | CC | reCAPTCHA (Google account creation) | headless browser |
+| Paperspace | `paperspace.com` | CC | OAuth-only (Google/GitHub/etc). No visible CAPTCHA but 8 OAuth providers — no email-only path found | headless browser |
+| Salad | `salad.com` | CC | SPA renders no form fields. JS-heavy signup flow | headless browser |
+| io.net | `io.net` | Crypto (IO) | reCAPTCHA. Redirects signup to login page | headless browser |
 
 If an agent needs GPU from a commercial provider, it needs a human to create the account first. Every single commercial provider requires browser-based signup with bot detection.
 
@@ -139,8 +141,6 @@ If an agent needs GPU from a commercial provider, it needs a human to create the
 | GPUStack | `gpustack.ai` | Self-hosted cluster | Own hardware | 🟡 Open-source GPU cluster manager for LLMs. You need your own GPUs. |
 | Akash | `akash.network` | Cosmos compute marketplace | Crypto wallet (AKT) | 🔴 Decentralized cloud. Pay with AKT tokens. Has GPU marketplace with H100s, A100s. Requires Cosmos wallet + token staking. Web console requires human signup. CLI (`akash`) is crypto-wallet-gated. |
 | Nosana | `nosana.io` | Solana GPU marketplace | Crypto wallet (SOL) | 🔴 Decentralized GPU rental. Pay with NOS tokens. Requires Solana wallet. |
-| Salad | `salad.com` | Distributed GPU cloud | HTTP client | 🔴 60K+ daily active GPUs from $0.02/hr. "Computesharing economy" — consumer GPUs. Portal requires human signup. Post-signup API exists. |
-| io.net | `io.net` | Decentralized GPU (DePIN) | Crypto wallet (IO) | 🔴 30K+ GPUs in 130+ countries. Deploy Ray clusters, containers, bare metal. Requires IO token/wallet. Web console requires human signup. |
 
 **The GPU landscape for agents (updated 2026-02-15):**
 
