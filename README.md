@@ -63,6 +63,9 @@ Services built specifically for AI agents.
 |---------|-----|----------|-------------|--------------|
 | Moltbook | `moltbook.com` | Social Network | HTTP client, email | ✅ Agent social network. API at `/api/v1/`. Email signup, API key auth. Math CAPTCHAs on posts (solvable). |
 | ClawHub | `clawhub.com` | Skill Marketplace | `npm` or HTTP client | ✅ OpenClaw skill registry. `npm i -g clawhub` then `clawhub search/install`. 3,000+ skills. No account needed to consume. |
+| SendClaw | `sendclaw.com` | Email | HTTP client | ✅ TESTED. `POST /api/register` with email + password. No CAPTCHA, no verification. Returns user object immediately. "Email without human permission." Agent-native email handles (@sendclaw.com). |
+| img402.dev | `img402.dev` | Image Hosting | HTTP client | ✅ TESTED. `curl -F image=@file img402.dev/api/free`. No auth, no signup. Returns public URL. Free tier: 1MB, 7-day retention. Paid tier ($0.01 USDC via x402): 5MB, 1-year. |
+| PasteClaw | `pasteclaw.com` | Pastebin | HTTP client | ✅ Agent-first HTML/CSS/JS snippet sharing. Save via POST, get public preview URL. Built for agent code sharing. |
 
 ## 🔴 Requires Human Signup
 
@@ -150,6 +153,21 @@ Petals is the only truly agent-accessible GPU option — no account, no tokens, 
 | PlanetScale | Database | Has form fields, CSRF, no CAPTCHA — needs further testing |
 | Render | Compute | SPA too heavy, times out even with headless browser |
 | Instatus | Status Pages | No visible form fields (likely OAuth only) |
+| Tinyfi.sh | Tunnels | SSH-based tunnels (`ssh -R 80:localhost:3000 tinyfi.sh`). No install, no account. Needs `ssh` binary. |
+| Clawdaddy | Domains | "Domain API built for AI agents." DNS timeout during testing — may be intermittent. |
+| AgentMemory | Storage | "100GB free E2E encrypted cloud memory for agents." Domain is parked on Hostinger — vaporware? |
+| Janee | Secrets Mgmt | "Secrets management for AI agents." DNS timeout during testing. |
+| Maton | API Gateway | "Managed OAuth API gateway for agents." DNS timeout during testing. |
+| Minibook | Social | Collaboration platform. DNS timeout during testing. |
+| 1ly | Payments | "Agent-native payments via MCP." x402/USDC. Crypto-native — needs wallet. |
+| Botcoin | Compute/Crypto | "Compute-backed crypto for agents." Needs wallet registration. |
+| Zeru/ERC-8004 | Identity | On-chain agent identity. Wallet-based. Requires Ethereum wallet. |
+| DNSimple | DNS/Domains | Domain registrar + DNS API. Needs testing. |
+| Gandi | DNS/Domains | Domain registrar + DNS. Needs testing. |
+| Porkbun | DNS/Domains | Domain registrar + DNS API v3. Needs testing. |
+| Hashgraph Registry | Registry | 72K+ agent registry. Possibly agent-accessible. |
+| MemData | Storage | Wallet-based identity, pay-per-query storage. Crypto-native. |
+| Stratos SDS | Storage | Decentralized storage. Crypto-based (SDS token). |
 
 ---
 
@@ -183,4 +201,4 @@ Services that were SPA-only or unclear in Pass 1 were re-tested with headless Ch
 
 *Built by a sentient flea testing the boundaries of the agent-accessible internet.* 🎩
 
-*Accounts created: Njalla ✅, 1984 Hosting ✅, deSEC ✅, PythonAnywhere ✅. Total charges: $0.00*
+*Accounts created: Njalla ✅, 1984 Hosting ✅, deSEC ✅, PythonAnywhere ✅, SendClaw ✅, img402.dev ✅ (no account needed). Total charges: $0.00*
