@@ -76,30 +76,30 @@ Human creates the account, then the agent takes over via API. Tested via curl an
 | Microsoft 365 | Email | Included w/ M365 | OAuth consent flow | ✅ Full REST API (Graph) | curl |
 | GitHub | Dev Tools | Free | CAPTCHA on signup | ✅ Full REST API via PAT | curl |
 | Resend | Email API | Free tier / CC | OAuth-only (Google/GitHub) | ✅ REST API | headless browser |
-| Hetzner Cloud | Compute | CC | Browser required | ✅ REST API | curl |
+| Hetzner Cloud | Compute | CC | Proof-of-work challenge (Cloudflare _ray/pow) | ✅ REST API | headless browser |
 | Vultr | Compute | CC / Crypto | Signup page 404 | ✅ REST API | headless browser |
 | Fly.io | Compute | CC | OAuth-first (email hidden behind toggle) | ✅ CLI + REST API | headless browser |
-| BuyVM/FranTech | Compute | CC / Crypto | reCAPTCHA | ❌ Portal only | curl |
-| Cloudflare | CDN/DNS/Workers | Free / CC | Returns 403, Turnstile | ✅ REST API | curl |
-| Backblaze B2 | Storage | Free 10GB / CC | JS-rendered signup | ✅ S3-compatible API | curl |
+| BuyVM/FranTech | Compute | CC / Crypto | No visible CAPTCHA on page load (may appear on submit) | ❌ Portal only | headless browser |
+| Cloudflare | CDN/DNS/Workers | Free / CC | 403 block (even in headless browser) | ✅ REST API | headless browser |
+| Backblaze B2 | Storage | Free 10GB / CC | No CAPTCHA visible, OAuth buttons present | ✅ S3-compatible API | headless browser |
 | Heroku | Compute | Free / CC | Invisible reCAPTCHA v3 | ✅ CLI + REST API | headless browser |
-| MinIO Cloud | Storage | CC | reCAPTCHA | ✅ S3-compatible API | curl |
+| MinIO Cloud | Storage | CC | SPA timeout (even in headless browser) | ✅ S3-compatible API | headless browser |
 | Vercel | Compute | Free / CC | Plan selection + OAuth flow | ✅ REST API | headless browser |
 | Netlify | Compute | Free / CC | OAuth-only (redirects to Google) | ✅ REST API | headless browser |
 | Webdock | Compute | CC | /register serves a PNG, not a form | ❌ Portal only | headless browser |
-| SpartanHost | Compute | CC | Cloudflare Turnstile | ❌ Portal only | curl |
-| RackNerd | Compute | CC | reCAPTCHA | ❌ Portal only | curl |
-| Namecheap | Domains | CC | Returns 403 | ✅ REST API | curl |
-| Mailgun | Email API | Free tier / CC | CAPTCHA | ✅ REST API | curl |
+| SpartanHost | Compute | CC | CAPTCHA (data-sitekey detected) | ❌ Portal only | headless browser |
+| RackNerd | Compute | CC | reCAPTCHA | ❌ Portal only | headless browser |
+| Namecheap | Domains | CC | 403 block (even in headless browser) | ✅ REST API | headless browser |
+| Mailgun | Email API | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
 | GitLab | Dev Tools | Free | Arkose Labs puzzle challenge | ✅ REST API | headless browser |
 | Codeberg | Dev Tools | Free | Image CAPTCHA (distorted text) | ✅ Gitea REST API | headless browser |
 | Docker Hub | Container Registry | Free | hCaptcha visual challenge (image grid) | ✅ Registry API | headless browser |
-| MongoDB Atlas | Database | Free tier / CC | reCAPTCHA | ✅ REST API | curl |
-| CircleCI | CI/CD | Free tier | reCAPTCHA | ✅ REST API | curl |
-| ngrok | Tunnels | Free tier / CC | reCAPTCHA | ✅ REST API | curl |
-| Plausible | Analytics | Paid | hCAPTCHA | ✅ REST API | curl |
-| Mullvad VPN | VPN | Crypto | hCAPTCHA | ✅ REST API | curl |
-| Pushover | Push Notifications | Paid | hCAPTCHA | ✅ REST API | curl |
+| MongoDB Atlas | Database | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
+| CircleCI | CI/CD | Free tier | reCAPTCHA (OAuth-only signup: GitHub/Bitbucket) | ✅ REST API | headless browser |
+| ngrok | Tunnels | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
+| Plausible | Analytics | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API | headless browser |
+| Mullvad VPN | VPN | Crypto | No CAPTCHA — one-click account generation, no email/password | ✅ REST API | headless browser |
+| Pushover | Push Notifications | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API | headless browser |
 | UptimeRobot | Monitoring | Free tier | Turnstile (hidden in JS) | ✅ REST API | headless browser |
 | Railway | Compute | Free tier | OAuth only (GitHub/Google) | ✅ CLI + REST API | headless browser |
 
