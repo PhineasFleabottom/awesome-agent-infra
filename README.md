@@ -131,16 +131,25 @@ No GPU provider tested allows agent signup. This is the biggest gap in the agent
 
 If an agent needs GPU from a commercial provider, it needs a human to create the account first. Every single commercial provider requires browser-based signup with bot detection.
 
-### Open-Source / Federated GPU Alternatives
+### Open-Source / Federated / Decentralized GPU Alternatives
 
 | Project | URL | Type | Agent Needs | Notes |
 |---------|-----|------|-------------|-------|
-| Petals | `petals.dev` | Volunteer GPU swarm | `pip install petals` | ✅ Zero signup. BitTorrent-style distributed inference for Llama 3.1 405B, Mixtral, Falcon, BLOOM. Connect and use. Network health varies — depends on active volunteers. |
+| Petals | `petals.dev` | Volunteer GPU swarm | `pip install petals` | ✅ Zero signup. BitTorrent-style distributed inference. Connect and use. Network health varies. Health API was down during testing (2026-02-15). |
 | GPUStack | `gpustack.ai` | Self-hosted cluster | Own hardware | 🟡 Open-source GPU cluster manager for LLMs. You need your own GPUs. |
-| Nosana | `nosana.com` | Solana GPU marketplace | Crypto wallet (SOL) | 🟡 Decentralized GPU rental. Pay with NOS tokens. Crypto-native. |
-| Akash | `akash.network` | Cosmos compute marketplace | Crypto wallet (AKT) | 🟡 Decentralized cloud. Pay with AKT tokens. Crypto-native. |
+| Akash | `akash.network` | Cosmos compute marketplace | Crypto wallet (AKT) | 🔴 Decentralized cloud. Pay with AKT tokens. Has GPU marketplace with H100s, A100s. Requires Cosmos wallet + token staking. Web console requires human signup. CLI (`akash`) is crypto-wallet-gated. |
+| Nosana | `nosana.io` | Solana GPU marketplace | Crypto wallet (SOL) | 🔴 Decentralized GPU rental. Pay with NOS tokens. Requires Solana wallet. |
+| Salad | `salad.com` | Distributed GPU cloud | HTTP client | 🔴 60K+ daily active GPUs from $0.02/hr. "Computesharing economy" — consumer GPUs. Portal requires human signup. Post-signup API exists. |
+| io.net | `io.net` | Decentralized GPU (DePIN) | Crypto wallet (IO) | 🔴 30K+ GPUs in 130+ countries. Deploy Ray clusters, containers, bare metal. Requires IO token/wallet. Web console requires human signup. |
 
-Petals is the only truly agent-accessible GPU option — no account, no tokens, no signup. Just `pip install` and connect to the swarm. The trade-off: your data passes through volunteer nodes (privacy implications) and availability depends on the community.
+**The GPU landscape for agents (updated 2026-02-15):**
+
+- **Zero signup:** Petals only (health endpoint unreliable)
+- **Crypto-native (wallet = identity):** Akash, Nosana, io.net — theoretically agent-accessible if agent has a crypto wallet, but all require token purchases and staking
+- **Human signup then API:** Salad, all traditional providers (RunPod, Vast.ai, Lambda, etc.)
+- **Self-hosted:** GPUStack, Ollama — agent needs physical access to GPU hardware
+
+The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-accessible since a wallet IS an identity — no email, no CAPTCHA. But they require buying and staking tokens, which loops back to needing a crypto exchange account (human-gated).
 
 ## Not Yet Tested / Unclear
 
