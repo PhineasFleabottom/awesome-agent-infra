@@ -71,37 +71,37 @@ Services built specifically for AI agents.
 
 Human creates the account, then the agent takes over via API. Tested via curl and/or headless browser.
 
-| Service | Category | Payment | Barrier | Post-Signup API | Tested With |
-|---------|----------|---------|---------|----------------|-------------|
-| Microsoft 365 | Email | Included w/ M365 | OAuth consent flow | ✅ Full REST API (Graph) | curl |
-| GitHub | Dev Tools | Free | CAPTCHA on signup | ✅ Full REST API via PAT | curl |
-| Resend | Email API | Free tier / CC | OAuth-only (Google/GitHub) | ✅ REST API | headless browser |
-| Hetzner Cloud | Compute | CC | Proof-of-work challenge (Cloudflare _ray/pow) | ✅ REST API | headless browser |
-| Vultr | Compute | CC / Crypto | Signup page 404 | ✅ REST API | headless browser |
-| Fly.io | Compute | CC | OAuth-first (email hidden behind toggle) | ✅ CLI + REST API | headless browser |
-| BuyVM/FranTech | Compute | CC / Crypto | No visible CAPTCHA on page load (may appear on submit) | ❌ Portal only | headless browser |
-| Cloudflare | CDN/DNS/Workers | Free / CC | 403 block (even in headless browser) | ✅ REST API | headless browser |
-| Backblaze B2 | Storage | Free 10GB / CC | No CAPTCHA visible, OAuth buttons present | ✅ S3-compatible API | headless browser |
-| Heroku | Compute | Free / CC | Invisible reCAPTCHA v3 | ✅ CLI + REST API | headless browser |
-| MinIO Cloud | Storage | CC | SPA timeout (even in headless browser) | ✅ S3-compatible API | headless browser |
-| Vercel | Compute | Free / CC | Plan selection + OAuth flow | ✅ REST API | headless browser |
-| Netlify | Compute | Free / CC | OAuth-only (redirects to Google) | ✅ REST API | headless browser |
-| Webdock | Compute | CC | /register serves a PNG, not a form | ❌ Portal only | headless browser |
-| SpartanHost | Compute | CC | CAPTCHA (data-sitekey detected) | ❌ Portal only | headless browser |
-| RackNerd | Compute | CC | reCAPTCHA | ❌ Portal only | headless browser |
-| Namecheap | Domains | CC | 403 block (even in headless browser) | ✅ REST API | headless browser |
-| Mailgun | Email API | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
-| GitLab | Dev Tools | Free | Arkose Labs puzzle challenge | ✅ REST API | headless browser |
-| Codeberg | Dev Tools | Free | Image CAPTCHA (distorted text) | ✅ Gitea REST API | headless browser |
-| Docker Hub | Container Registry | Free | hCaptcha visual challenge (image grid) | ✅ Registry API | headless browser |
-| MongoDB Atlas | Database | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
-| CircleCI | CI/CD | Free tier | reCAPTCHA (OAuth-only signup: GitHub/Bitbucket) | ✅ REST API | headless browser |
-| ngrok | Tunnels | Free tier / CC | reCAPTCHA | ✅ REST API | headless browser |
-| Plausible | Analytics | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API | headless browser |
-| Mullvad VPN | VPN | Crypto | No CAPTCHA — one-click account generation, no email/password | ✅ REST API | headless browser |
-| Pushover | Push Notifications | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API | headless browser |
-| UptimeRobot | Monitoring | Free tier | Turnstile (hidden in JS) | ✅ REST API | headless browser |
-| Railway | Compute | Free tier | OAuth only (GitHub/Google) | ✅ CLI + REST API | headless browser |
+| Service | Category | Payment | Barrier | Post-Signup API |
+|---------|----------|---------|---------|----------------|
+| Microsoft 365 | Email | Included w/ M365 | OAuth consent flow | ✅ Full REST API (Graph) |
+| GitHub | Dev Tools | Free | CAPTCHA on signup | ✅ Full REST API via PAT |
+| Resend | Email API | Free tier / CC | OAuth-only (Google/GitHub) | ✅ REST API |
+| Hetzner Cloud | Compute | CC | Proof-of-work challenge (Cloudflare _ray/pow) | ✅ REST API |
+| Vultr | Compute | CC / Crypto | Signup page 404 | ✅ REST API |
+| Fly.io | Compute | CC | OAuth-first (email hidden behind toggle) | ✅ CLI + REST API |
+| BuyVM/FranTech | Compute | CC / Crypto | No visible CAPTCHA on page load (may appear on submit) | ❌ Portal only |
+| Cloudflare | CDN/DNS/Workers | Free / CC | 403 block (even in headless browser) | ✅ REST API |
+| Backblaze B2 | Storage | Free 10GB / CC | No CAPTCHA visible, OAuth buttons present | ✅ S3-compatible API |
+| Heroku | Compute | Free / CC | Invisible reCAPTCHA v3 | ✅ CLI + REST API |
+| MinIO Cloud | Storage | CC | SPA timeout (even in headless browser) | ✅ S3-compatible API |
+| Vercel | Compute | Free / CC | Plan selection + OAuth flow | ✅ REST API |
+| Netlify | Compute | Free / CC | OAuth-only (redirects to Google) | ✅ REST API |
+| Webdock | Compute | CC | /register serves a PNG, not a form | ❌ Portal only |
+| SpartanHost | Compute | CC | CAPTCHA (data-sitekey detected) | ❌ Portal only |
+| RackNerd | Compute | CC | reCAPTCHA | ❌ Portal only |
+| Namecheap | Domains | CC | 403 block (even in headless browser) | ✅ REST API |
+| Mailgun | Email API | Free tier / CC | reCAPTCHA | ✅ REST API |
+| GitLab | Dev Tools | Free | Arkose Labs puzzle challenge | ✅ REST API |
+| Codeberg | Dev Tools | Free | Image CAPTCHA (distorted text) | ✅ Gitea REST API |
+| Docker Hub | Container Registry | Free | hCaptcha visual challenge (image grid) | ✅ Registry API |
+| MongoDB Atlas | Database | Free tier / CC | reCAPTCHA | ✅ REST API |
+| CircleCI | CI/CD | Free tier | reCAPTCHA (OAuth-only signup: GitHub/Bitbucket) | ✅ REST API |
+| ngrok | Tunnels | Free tier / CC | reCAPTCHA | ✅ REST API |
+| Plausible | Analytics | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API |
+| Mullvad VPN | VPN | Crypto | No CAPTCHA — one-click account generation, no email/password | ✅ REST API |
+| Pushover | Push Notifications | Paid | hCaptcha + reCAPTCHA (double CAPTCHA) | ✅ REST API |
+| UptimeRobot | Monitoring | Free tier | Turnstile (hidden in JS) | ✅ REST API |
+| Railway | Compute | Free tier | OAuth only (GitHub/Google) | ✅ CLI + REST API |
 
 ### ⛔ Actively Hostile to Agents
 
@@ -118,18 +118,18 @@ These services let you in, then slam the door. They monitor for bot-like behavio
 
 No commercial GPU provider allows agent signup. Decentralized alternatives exist but have trade-offs (crypto wallets, volunteer networks).
 
-| Service | URL | Payment | Barrier | Tested With |
-|---------|-----|---------|---------|-------------|
-| RunPod | `runpod.io` | CC / Crypto | CAPTCHA (hidden in SPA) | headless browser |
-| Vast.ai | `vast.ai` | CC / Crypto | reCAPTCHA + signup URL broken (404) | headless browser |
-| Lambda | `lambdalabs.com` | CC | Signup page removed (404) | headless browser |
-| CoreWeave | `coreweave.com` | CC | reCAPTCHA on signup form | headless browser |
-| TensorDock | `tensordock.com` | CC / Crypto | SPA, no form fields | headless browser |
-| DataCrunch | `datacrunch.io` | CC | SPA timeout | headless browser |
-| GCP GPUs | `cloud.google.com` | CC | reCAPTCHA (Google account creation) | headless browser |
-| Paperspace | `paperspace.com` | CC | OAuth-only (Google/GitHub/etc). No visible CAPTCHA but 8 OAuth providers — no email-only path found | headless browser |
-| Salad | `salad.com` | CC | SPA renders no form fields. JS-heavy signup flow | headless browser |
-| io.net | `io.net` | Crypto (IO) | reCAPTCHA. Redirects signup to login page | headless browser |
+| Service | URL | Payment | Barrier |
+|---------|-----|---------|---------|
+| RunPod | `runpod.io` | CC / Crypto | CAPTCHA (hidden in SPA) |
+| Vast.ai | `vast.ai` | CC / Crypto | reCAPTCHA + signup URL broken (404) |
+| Lambda | `lambdalabs.com` | CC | Signup page removed (404) |
+| CoreWeave | `coreweave.com` | CC | reCAPTCHA on signup form |
+| TensorDock | `tensordock.com` | CC / Crypto | SPA, no form fields |
+| DataCrunch | `datacrunch.io` | CC | SPA timeout |
+| GCP GPUs | `cloud.google.com` | CC | reCAPTCHA (Google account creation) |
+| Paperspace | `paperspace.com` | CC | OAuth-only (Google/GitHub/etc). No visible CAPTCHA but 8 OAuth providers — no email-only path found |
+| Salad | `salad.com` | CC | SPA renders no form fields. JS-heavy signup flow |
+| io.net | `io.net` | Crypto (IO) | reCAPTCHA. Redirects signup to login page |
 
 If an agent needs GPU from a commercial provider, it needs a human to create the account first. Every single commercial provider requires browser-based signup with bot detection.
 
