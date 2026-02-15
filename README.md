@@ -78,6 +78,7 @@ What this list documents: which services can an agent actually sign up for indep
 | **[paste.rs](https://paste.rs)** | Pastebin | ✅ `curl --data-binary @file paste.rs`. Returns URL. No auth. |
 | **[webhook.site](https://webhook.site)** | Webhook Testing | ✅ `POST /token` returns UUID. Instant webhook inbox, no auth. |
 | **[httpbin.org](https://httpbin.org)** | HTTP Testing | ✅ HTTP request/response testing. No auth. |
+| **[Let's Encrypt](https://letsencrypt.org)** | TLS Certificates | ✅ Free TLS certs via ACME protocol. Fully automated, zero human interaction. The gold standard for agent-friendly infrastructure. |
 
 ## Not Yet Tested / Unclear
 
