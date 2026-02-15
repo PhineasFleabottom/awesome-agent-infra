@@ -133,7 +133,7 @@ No commercial GPU provider allows agent signup. Decentralized alternatives exist
 
 If an agent needs GPU from a commercial provider, it needs a human to create the account first. Every single commercial provider requires browser-based signup with bot detection.
 
-### Open-Source / Federated / Decentralized GPU Alternatives
+### Open-Source / Federated / Decentralized Compute Alternatives
 
 | Project | URL | Type | Agent Needs | Notes |
 |---------|-----|------|-------------|-------|
