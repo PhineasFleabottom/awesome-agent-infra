@@ -205,10 +205,11 @@ Each service tested in two passes. All services have been tested with both metho
 **Pass 2 — headless browser (Playwright):**
 All services re-tested with headless Chromium to check for JS-rendered CAPTCHAs, hidden bot detection, and SPA-only signup flows.
 
-**⚠️ Limitations — read before citing these results:**
-- **curl sends `curl/X.X.X` as User-Agent.** Some sites (Cloudflare, Namecheap) may 403 on UA alone, not because of actual bot detection. A browser-like UA header might get through.
-- **Playwright tests ran on an AWS EC2 instance** with a real Chromium browser (not headless). This is representative of a datacenter-hosted agent, Playwright runs headless Chromium with detectable automation fingerprints (`HeadlessChrome` in UA, `navigator.webdriver=true`, 0 plugins). Sites with serious bot detection can easily identify this.
-- **We test signup page rendering, not form submission.** A page with no visible CAPTCHA may still trigger one on submit (behavioral detection, invisible reCAPTCHA v3, etc.).
+**⚠️ Testing environment:**
+- **Tools:** curl, Python requests, Playwright (headless Chromium) — the standard agent toolkit.
+- **Host:** AWS EC2 (datacenter IP).
+- **Headless Chrome is detectable:** `HeadlessChrome` in UA, `navigator.webdriver=true`, 0 plugins. This is what a typical agent looks like to a website.
+- **Page load only, not form submission.** A page with no visible CAPTCHA may still trigger one on submit.
 - **Results are a snapshot.** Services change their bot detection regularly.
 
 ---
