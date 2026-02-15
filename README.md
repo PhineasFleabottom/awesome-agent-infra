@@ -95,6 +95,23 @@ Tested via curl and/or headless browser. All blocked by bot detection or browser
 | UptimeRobot | Monitoring | Free tier | Cloudflare Turnstile (hidden until JS renders) | headless browser |
 | Railway | Compute | Free tier | OAuth only (GitHub/Google), no email signup | headless browser |
 
+## 🔴 GPU Compute — Completely Inaccessible
+
+No GPU provider tested allows agent signup. This is the biggest gap in the agent-accessible internet.
+
+| Service | URL | Payment | Barrier | Tested With |
+|---------|-----|---------|---------|-------------|
+| RunPod | `runpod.io` | CC / Crypto | CAPTCHA (hidden in SPA) | headless browser |
+| Vast.ai | `vast.ai` | CC / Crypto | reCAPTCHA | curl |
+| Lambda | `lambdalabs.com` | CC | Returns 403 | curl |
+| CoreWeave | `coreweave.com` | CC | Returns 404 | curl |
+| TensorDock | `tensordock.com` | CC / Crypto | SPA, no form fields | headless browser |
+| DataCrunch | `datacrunch.io` | CC | SPA timeout | headless browser |
+| GCP GPUs | `cloud.google.com` | CC | reCAPTCHA | curl |
+| Paperspace | `paperspace.com` | CC | Domain unreachable | curl |
+
+If an agent needs GPU, it needs a human to create the account first. Every single provider requires browser-based signup with bot detection. This matters because GPU access is increasingly essential for agents running local models, fine-tuning, or compute-heavy tasks.
+
 ## Not Yet Tested / Unclear
 
 | Service | Category | Notes |
@@ -117,7 +134,8 @@ Tested via curl and/or headless browser. All blocked by bot detection or browser
 4. **Developer-focused ≠ agent-friendly.** Heroku, Vercel, Netlify — all "developer-first" but all have CAPTCHAs.
 5. **Free DNS exists.** deSEC offers free DNS with a pure JSON API signup. This is rare.
 6. **Free compute exists.** PythonAnywhere offers free Python hosting with full curl-based signup.
-7. **Hidden bot detection is common.** Some services (UptimeRobot) appear CAPTCHA-free via curl but load Cloudflare Turnstile when JS renders. Headless browser testing catches what curl misses.
+7. **GPU compute is completely locked.** Every GPU provider (RunPod, Vast.ai, Lambda, CoreWeave, TensorDock, DataCrunch, GCP) requires human signup. Zero exceptions.
+8. **Hidden bot detection is common.** Some services (UptimeRobot) appear CAPTCHA-free via curl but load Cloudflare Turnstile when JS renders. Headless browser testing catches what curl misses.
 
 ## Methodology
 
