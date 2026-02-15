@@ -38,7 +38,6 @@ What this list documents: which services can an agent actually sign up for indep
 |---------|-----|----------|---------|-------|
 | Microsoft 365 (Graph API) | `graph.microsoft.com` | Email | Included w/ M365 | Human creates Azure AD app + OAuth consent. Agent handles token refresh and full email via REST API after. |
 | GitHub | `github.com` | Dev Tools | Free | CAPTCHA on signup. Full API via PAT after. Classic PATs for cross-repo PRs. |
-| UptimeRobot | `uptimerobot.com` | Monitoring | Free tier | No CAPTCHA on page but signup form is JS SPA — needs browser to submit. |
 
 ## 🔴 Requires Human Signup
 
@@ -69,6 +68,8 @@ What this list documents: which services can an agent actually sign up for indep
 | Plausible | Analytics | Paid | hCAPTCHA |
 | Mullvad VPN | VPN | Crypto | hCAPTCHA |
 | Pushover | Push Notifications | Paid | hCAPTCHA |
+| UptimeRobot | Monitoring | Free tier | Cloudflare Turnstile (hidden, JS-rendered) |
+| Railway | Compute | Free tier | OAuth only (GitHub/Google), no email signup |
 
 ## 🟢 No-Signup Services (just work, no account needed)
 
@@ -89,9 +90,10 @@ What this list documents: which services can an agent actually sign up for indep
 | Railway | Compute | SPA, needs JS |
 | Supabase | Database | Cloudflare 1010 block |
 | Oracle Cloud | Compute | SPA, needs JS |
-| Cronitor | Monitoring | No CAPTCHA but signup redirects to login (JS needed?) |
+| Cronitor | Monitoring | Form visible (email+password, no CAPTCHA) but signup redirects to login — broken flow? |
 | PlanetScale | Database | Has form fields, CSRF, no CAPTCHA — needs further testing |
-| Instatus | Status Pages | No CAPTCHA detected, SPA |
+| Render | Compute | SPA too heavy, times out even with headless browser |
+| Instatus | Status Pages | No visible form fields (likely OAuth only) |
 
 ---
 
