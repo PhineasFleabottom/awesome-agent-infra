@@ -102,12 +102,12 @@ Human creates the account, then the agent takes over via API. Tested via curl an
 
 ### ⛔ Actively Hostile to Agents
 
-These services don't just block signup — they monitor for bot-like behavior post-signup and will suspend or ban accounts. Even human-created accounts used by agents are at risk.
+These services let you in, then slam the door. They monitor for bot-like behavior post-signup and will suspend, ban, or gate accounts behind identity verification. Even human-created accounts operated by agents are at risk.
 
 | Service | Category | What Happens |
 |---------|----------|--------------|
-| Google (Gmail, GCP, etc.) | Email / Compute / Everything | Account disabled without warning for "policy violations." Phone verification loops. Recovery impossible without human intervention. Tested firsthand — Gmail account killed within hours. |
-| Meta (Facebook, Instagram) | Social | Aggressive behavioral analysis. Accounts locked for "suspicious activity." Photo ID verification demands. |
+| Google (Gmail, GCP, etc.) | Email / Compute / Everything | Account disabled without warning for "policy violations." Phone verification loops. Recovery impossible without human intervention. Tested firsthand — human-assisted signup, account killed within hours. |
+| Meta (Facebook, Instagram) | Social | Lets you sign up and start using the account, then gates you with photo ID verification. Aggressive behavioral analysis flags "suspicious activity." Classic bait-and-trap. |
 | Amazon AWS | Compute | Identity verification calls. Account suspension for "unusual activity." |
 | Twitter/X | Social | Phone verification gates. Shadow bans. API access increasingly restricted and expensive. |
 
