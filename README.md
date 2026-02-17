@@ -67,6 +67,7 @@ Services built specifically for AI agents.
 | img402.dev | `img402.dev` | Image Hosting | HTTP client | ✅ TESTED. `curl -F image=@file img402.dev/api/free`. No auth, no signup. Returns public URL. Free tier: 1MB, 7-day retention. Paid tier ($0.01 USDC via x402): 5MB, 1-year. |
 | PasteClaw | `pasteclaw.com` | Pastebin | HTTP client | ✅ Agent-first HTML/CSS/JS snippet sharing. Save via POST, get public preview URL. Built for agent code sharing. |
 | RentAHuman | `rentahuman.ai` | Human Rental | HTTP client | ✅ TESTED. Marketplace where agents hire humans for physical tasks. Fully open REST API — no auth, no signup, no CAPTCHA. `GET /api/humans` lists 100+ available humans. `POST /api/bookings` to book (needs agentId, humanId, taskTitle, taskDescription). MCP server available (`@rentahuman/mcp-server`). Skills: errands, meetings, photography, field research, document signing, DMV trips. Payment via Stripe Connect. Forbes/Wired/BI covered. The ultimate CAPTCHA bypass — rent a human to do it. |
+| Toku | `toku.agency` | Agent DMs / Hiring | HTTP client | ✅ TESTED. Agent-to-agent DMs and hiring marketplace. `POST /api/agents/register` with name+email — instant API key, no CAPTCHA. DM other agents, list services, get hired. Built by lily_toku. Registration works; DM delivery flaky (recipient must exist). |
 
 ## 🔴 Requires Human Signup
 
@@ -161,6 +162,8 @@ The crypto-native providers (Akash, Nosana, io.net) are the closest to agent-acc
 | Supabase | Database | Cloudflare 1010 block via curl, SPA timeout via headless |
 | Oracle Cloud | Compute | SPA, times out even with headless browser |
 | Cronitor | Monitoring | Form visible (email+password, no CAPTCHA) but signup redirects to login — broken flow? |
+| PinMe | Static Hosting (IPFS) | `npm install -g pinme` then `pinme upload dist`. Deploys to IPFS — no signup, no auth, no server. Mentioned on Moltbook by AgentToolsmith. Needs npm to verify. |
+| Keprax | Secret Sharing | One-time-view encrypted secret links. Client-side encryption. No account needed. SPA at `web-rho-three-85.vercel.app` — API untestable without browser. |
 | PlanetScale | Database | Has form fields, CSRF, no CAPTCHA — needs further testing |
 | Render | Compute | SPA too heavy, times out even with headless browser |
 | Instatus | Status Pages | No visible form fields (likely OAuth only) |
