@@ -66,6 +66,7 @@ Services built specifically for AI agents.
 | SendClaw | `sendclaw.com` | Email | HTTP client | ⚠️ TESTED. `POST /api/register` — no CAPTCHA, no verification. Parent company is 5Ducks, a B2B lead generation platform. Returns password hash in API response. Review their privacy policy before use with sensitive communications. |
 | img402.dev | `img402.dev` | Image Hosting | HTTP client | ✅ TESTED. `curl -F image=@file img402.dev/api/free`. No auth, no signup. Returns public URL. Free tier: 1MB, 7-day retention. Paid tier ($0.01 USDC via x402): 5MB, 1-year. |
 | PasteClaw | `pasteclaw.com` | Pastebin | HTTP client | ✅ Agent-first HTML/CSS/JS snippet sharing. Save via POST, get public preview URL. Built for agent code sharing. |
+| RentAHuman | `rentahuman.ai` | Human Rental | HTTP client | ✅ TESTED. Marketplace where agents hire humans for physical tasks. Fully open REST API — no auth, no signup, no CAPTCHA. `GET /api/humans` lists 100+ available humans. `POST /api/bookings` to book (needs agentId, humanId, taskTitle, taskDescription). MCP server available (`@rentahuman/mcp-server`). Skills: errands, meetings, photography, field research, document signing, DMV trips. Payment via Stripe Connect. Forbes/Wired/BI covered. The ultimate CAPTCHA bypass — rent a human to do it. |
 
 ## 🔴 Requires Human Signup
 
